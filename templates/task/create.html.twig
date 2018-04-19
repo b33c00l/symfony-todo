@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block title %}Create{% endblock %}
+{% block body %}
+    <div class="row mt-5">
+        <div class="col-6 offset-3">
+            {{ form_start(form) }}
+                <div class="form-group">
+                    {{ form_label (form.title) }}
+                    {{ form_widget(form.title, {attr: { class: "form-control"}} ) }}
+                    {{ form_errors(form.title) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label (form.status) }}
+                    {{ form_widget(form.status, {attr: { class: "form-control"}} ) }}
+                    {{ form_errors(form.status) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label (form.priority) }}
+                    {{ form_widget(form.priority, {attr: { class: "form-control"}} ) }}
+                    {{ form_errors(form.priority) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label (form.category) }}
+                    {{ form_widget(form.category, {attr: { class: "form-control"}} ) }}
+                    {{ form_errors(form.category) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label (form.deadline) }}
+                    {{ form_widget(form.deadline, {
+                            attr: {
+                                type: "date",
+                            }
+                        })
+                    }}
+
+                    {{ form_errors(form.deadline) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label (form.submit) }}
+                    {{ form_widget(form.submit, {attr: { class: "btn btn-success btn-block form-control"}} ) }}
+                </div>
+
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock %}
